@@ -43,7 +43,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [body, mutatePosts, isComment, postId, mutatePost ]);
+  }, [body, mutatePosts, isComment, postId, mutatePost]);
 
   return (
     <div className="border-b-[1px] border-neutral-800 px-5 py-2">
@@ -82,7 +82,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
       ) : (
         <div className="py-8 ">
           <h1 className="text-white text-2xl text-center pb-2 font-bold">
-            Welcome to Twitter 2023
+            Welcome to Thawitta 2023
           </h1>
           <div className="flex  flex-row items-center justify-center gap-4">
             <Button label="Login" onClick={loginModal.onOpen} />

@@ -1,8 +1,8 @@
-import Header from "@/components/Headers";
-import NotificationFeed from "@/components/NotificationFeed";
+import Header from "@/components/Header";
+import NotificationsFeed from "@/components/NotificationFeed";
+import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -23,13 +23,13 @@ export async function getServerSideProps(context: NextPageContext) {
   };
 }
 
-const notification = () => {
+const Notifications = () => {
   return (
     <>
-      <Header label="Notification" showBackArrow />;
-      <NotificationFeed />
+      <Header showBackArrow label="Notifications" />
+      <NotificationsFeed />
     </>
   );
 };
 
-export default notification;
+export default Notifications;

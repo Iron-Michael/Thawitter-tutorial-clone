@@ -3,11 +3,10 @@ import { ClipLoader } from "react-spinners";
 
 import usePost from "@/hooks/usePost";
 
-import Headers from "@/components/Header";
+import Header from "@/components/Headers";
 import Form from "@/components/Form";
 import PostItem from "@/components/posts/PostItem";
 import CommentFeed from "@/components/posts/CommentFeed";
-import Header from "@/components/Headers";
 
 const PostView = () => {
   const router = useRouter();

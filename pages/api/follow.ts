@@ -25,7 +25,7 @@ export default async function handler(
       },
     });
 
-    if (!userId) {
+    if (!user) {
       throw new Error("Invalid ID");
     }
 
@@ -37,7 +37,7 @@ export default async function handler(
       try {
         await prisma.notification.create({
           data: {
-            body: "Someone Follow you!!",
+            body: "Someone followed you!",
             userId,
           },
         });

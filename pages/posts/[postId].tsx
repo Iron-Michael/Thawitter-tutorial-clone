@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
-
 import usePost from "@/hooks/usePost";
-
 import Header from "@/components/Headers";
 import Form from "@/components/Form";
 import PostItem from "@/components/posts/PostItem";

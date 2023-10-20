@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/libs/prismadb";
 export async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -17,7 +17,7 @@ export async function handler(req: NextApiRequest, res: NextApiResponse) {
         username,
         name,
         hashedPassword,
-      },
+      }
     });
 
     return res.status(200).json(user);

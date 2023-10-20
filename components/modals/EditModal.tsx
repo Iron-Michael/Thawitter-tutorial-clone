@@ -1,11 +1,13 @@
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useEditModal from "@/hooks/useEditModal";
 import useUser from "@/hooks/useUser";
-import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import Modal from "../Modal";
+
 import Input from "../Input";
+import Modal from "../Modal";
 import ImageUpload from "../ImageUpload";
 
 const EditModal = () => {
@@ -30,7 +32,7 @@ const EditModal = () => {
     currentUser?.username,
     currentUser?.bio,
     currentUser?.profileImage,
-    currentUser?.coverImag,
+    currentUser?.coverImage,
   ]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +48,6 @@ const EditModal = () => {
         profileImage,
         coverImage,
       });
-
       mutateFetchedUser();
 
       toast.success("Updated");
@@ -58,17 +59,17 @@ const EditModal = () => {
       setIsLoading(false);
     }
   }, [
-    bio,
+    editModal,
     name,
     username,
+    bio,
+    mutateFetchedUser,
     profileImage,
     coverImage,
-    editModal,
-    mutateFetchedUser,
   ]);
 
   const bodyContent = (
-    <div className="flex flex-col  gap-4">
+    <div className="flex flex-col gap-4">
       <ImageUpload
         value={profileImage}
         disabled={isLoading}
@@ -88,7 +89,7 @@ const EditModal = () => {
         disabled={isLoading}
       />
       <Input
-        placeholder="UserName"
+        placeholder="Username"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
         disabled={isLoading}
